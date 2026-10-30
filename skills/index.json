@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "skills": [
+    {
+      "name": "frontend-design",
+      "description": "Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.",
+      "source": "anthropics/skills@frontend-design",
+      "path": "skills/frontend-design",
+      "license": "Complete terms in LICENSE.txt",
+      "verified": {
+        "date": "2026-10-28",
+        "with": ["frey 0.9.1 (T-0066)"],
+        "commit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44"
+      }
+    }
+  ]
+}

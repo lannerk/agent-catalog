@@ -1,0 +1,7 @@
+{
+  "name": "frey",
+  "owner": { "name": "lannerk", "url": "https://github.com/lannerk" },
+  "interface": { "displayName": "Frey" },
+  "description": "Frey plugins (Agent Plugins 1.0 packages; the entries use what Claude Code and Codex marketplaces share, so either can read this file too).",
+  "plugins": []
+}

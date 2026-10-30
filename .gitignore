@@ -1,0 +1,2 @@
+# sync_mcp.py keeps the official schemas it reads here between runs.
+.cache/

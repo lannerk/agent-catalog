@@ -1,0 +1,54 @@
+# Daily mirror of the official MCP Registry into mcp/ (scripts/sync_mcp.py; README "MCP 服务器镜像").
+# Incremental from the last run's start; the first run (no mcp/servers.json yet), or a manual run with
+# full = true, mirrors everything. Commits only when the servers changed. Linux, a few minutes.
+name: sync
+
+on:
+  schedule:
+    - cron: "17 19 * * *" # 03:17 Asia/Shanghai
+  workflow_dispatch:
+    inputs:
+      full:
+        description: Mirror everything again (instead of what changed since the last run)
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync
+  cancel-in-progress: false
+
+jobs:
+  mcp:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - name: The schema checker
+        run: python3 -m pip install --user --disable-pip-version-check jsonschema==4.26.0
+      - name: Tests
+        run: python3 scripts/test_sync_mcp.py
+      - name: Sync
+        env:
+          FULL: ${{ inputs.full }}
+        run: |
+          if [[ $FULL == true || ! -f mcp/servers.json ]]; then
+            python3 scripts/sync_mcp.py --full
+          else
+            python3 scripts/sync_mcp.py
+          fi
+      - name: Files check
+        run: python3 scripts/test_sync_mcp.py FilesTest
+      - name: Commit
+        run: |
+          git add mcp
+          if git diff --cached --quiet; then
+            echo "no change"
+            exit 0
+          fi
+          count=$(python3 -c 'import json; print(json.load(open("mcp/servers.json"))["count"])')
+          git -c user.name=agent-catalog-sync -c user.email=agent-catalog-sync@users.noreply.github.com \
+            commit -q -m "mcp: sync from the official registry ($count servers)"
+          git push -q origin HEAD:main
