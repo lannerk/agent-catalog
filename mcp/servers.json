@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "source": "https://registry.modelcontextprotocol.io/v0.1/servers",
+ "synced_at": "2026-10-30T07:13:56Z",
+ "count": 52517,
+ "shards": {
+  "0": {
+   "count": 3299,
+   "sha256": "a57d45c767bd278b743e5cc62dea6f5481be8c2136c082cf0bdbf328079e1fc7"
+  },
+  "1": {
+   "count": 3199,
+   "sha256": "8bc4bf45361806829c1e02ae8aaad52ced93518299a23ad071840192ead9851e"
+  },
+  "2": {
+   "count": 3221,
+   "sha256": "28671aa02f0459870629544ca9d439ffe7d29c49a9b407a71f0a947afda77617"
+  },
+  "3": {
+   "count": 3282,
+   "sha256": "906328bd5bf2e6b7584f1aa4198d3fdb86ccd741cd868ea3804dc250424c211d"
+  },
+  "4": {
+   "count": 3306,
+   "sha256": "5bb44040bb56fa8c2e40c736c4fd209683c5d84011f5b31e99fabca7924c0009"
+  },
+  "5": {
+   "count": 3204,
+   "sha256": "3711786e50d9a0bb0692bd2ffdf43f857364117c73146cac28a4050bdfd3ac6e"
+  },
+  "6": {
+   "count": 3284,
+   "sha256": "5fff0ecfb1e8a1cdc8a817f54de8cf4a7327f3e1dfe38949c0e96f1dfd980bf0"
+  },
+  "7": {
+   "count": 3335,
+   "sha256": "ff747fac149cc32ec87e2d4737d924588c65c2a49d5c35ce9258ed927d43d15c"
+  },
+  "8": {
+   "count": 3404,
+   "sha256": "95bd5ad45c5fc101d88839218616cf381390949911bb3c6a5a68caedf8323f71"
+  },
+  "9": {
+   "count": 3179,
+   "sha256": "fd68f93d8524b4100f102a19df3b94e77ed97ef11268ff13b7531e3e8a2a307c"
+  },
+  "a": {
+   "count": 3261,
+   "sha256": "f99725d6ca094574a615f4b25a64b54ae585469e58e26c089e75a65a2ad10f00"
+  },
+  "b": {
+   "count": 3282,
+   "sha256": "dfdec7e679c35cf045343dcad17164b944b3db9db96e6d224089c0fc3303c6ff"
+  },
+  "c": {
+   "count": 3302,
+   "sha256": "3530b2ac20851e5addfeaef32b4fd0bdf48269806a9a2ae1e56051c575c430c5"
+  },
+  "d": {
+   "count": 3323,
+   "sha256": "c3065ceda49eae747d4fbf4a4f3ae28fe3c92686272869fc31f5f28e031c0333"
+  },
+  "e": {
+   "count": 3346,
+   "sha256": "22643640d2a3801267daacfbcd83cc3ec77746fbc0cf69853d4f89d0a4d12940"
+  },
+  "f": {
+   "count": 3290,
+   "sha256": "781ea72317693d8724dfb1fa37d31c706378397b2c3da9b1337f6eb9c07a1176"
+  }
+ }
+}
