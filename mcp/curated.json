@@ -1,4 +1,20 @@
 {
   "schema": 1,
-  "servers": []
+  "servers": [
+    {
+      "name": "com.microsoft/microsoft-learn-mcp",
+      "verified": {
+        "date": "2026-10-31",
+        "with": [
+          "frey 0.9.3 pre-release (2026-10-31 build)"
+        ],
+        "version": "1.0.0"
+      },
+      "connector": {
+        "transport": "streamable-http",
+        "url": "https://learn.microsoft.com/api/mcp"
+      },
+      "notes": "Microsoft Learn docs search, code samples, page fetch (3 tools, read-only, reach out); no sign-in. Checked: `frey connectors add com.microsoft/microsoft-learn-mcp`, then a turn of DeepSeek called microsoft_docs_search."
+    }
+  ]
 }
