@@ -12,6 +12,18 @@
         "with": ["frey 0.9.1 (T-0066)"],
         "commit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44"
       }
+    },
+    {
+      "name": "hallmark",
+      "description": "Design skill for websites and new pages that look designed, not generated. Use when the user asks to build or design something new, or names Hallmark.",
+      "source": "https://github.com/Nutlope/hallmark.git#4f6a46c6dc325d40ab268c93e25c7b96676ebccd",
+      "path": "skills/hallmark",
+      "license": "MIT",
+      "verified": {
+        "date": "2026-11-01",
+        "with": ["frey 0.9.3 pre-release (2026-11-01 build)"],
+        "commit": "4f6a46c6dc325d40ab268c93e25c7b96676ebccd"
+      }
     }
   ]
 }
