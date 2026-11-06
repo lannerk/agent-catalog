@@ -11,8 +11,10 @@ Frey 与 PiEv 共用的目录仓：插件市场、精选 skills、MCP 服务器�
 | `skills/index.json` | 在 Frey 里试过的 skills（Agent Skills 格式），每条带 `frey skills add` / `npx skills add` 认的来源 | 人手工 |
 | `mcp/servers.json` ＋ `mcp/servers/<0-f>.json` | 官方 MCP 注册表的镜像：每个没被删除的服务器的最新版本，按 `sha256(名字)` 的首位分成 16 份，一行一个 | `sync.yml` 每天 |
 | `mcp/curated.json` | 在 Frey 里跑通、核过的服务器，带连接器配置模板（不含凭据）；**只有这里的标「已验证」**，装镜像里的其他服务器要确认「来源未经验证」 | 人手工 |
+| `catalog/models-facts.json` | Frey 的模型事实表（窗口、输出上限、价格、模态、自报评测），从我们审过的 models.dev fork（`lannerk/models.dev` 的 `dev`）生成；`frey models refresh` 读它，费用与积分只用这一份 | `models-facts.yml` 每周 |
 | `*.schema.json` | 上面各文件的 JSON Schema | 人手工 |
 | `scripts/sync_mcp.py` / `test_sync_mcp.py` | 同步脚本（只用标准库，装了 jsonschema 就按官方 schema 核每条）与它的测试 | 人手工 |
+| `scripts/build_models_facts.sh` / `check_models_facts.py` | 生成事实表（用 fork 自己 `frey/` 下的生成器、预设、修正与 schema）与提交前的检查（合 schema、至少 10 个预设 500 个模型） | 人手工 |
 
 ## MCP 服务器镜像
 
@@ -21,6 +23,11 @@ Frey 与 PiEv 共用的目录仓：插件市场、精选 skills、MCP 服务器�
 - 服务器没变就不提交。
 - 客户端怎么读：先读 `mcp/servers.json`（`count`、每份的 `count` 与 `sha256`），再按需读分片；按 `sha256` 判断分片变没变、要不要重新下。
 - 官方注册表只核了「命名空间归谁」，没核代码安全：镜像只用来**发现**，装什么由人决定。
+
+## 模型事实表
+
+- 链路：上游 `anomalyco/models.dev` → 我们的 fork `lannerk/models.dev`（每周 `frey-sync` 开 PR：价格变动超过 30%、模型被删、新模型列在描述里，人看过再合进 `dev`；我们的修正只放 fork 的 `frey/overrides/`）→ 这里每周 `models-facts.yml` 从 fork 的 `dev` 生成 `catalog/models-facts.json` → 客户端 `frey models refresh`（或打开 `models.auto_refresh`）。
+- 手动跑一遍：`git clone -b dev https://github.com/lannerk/models.dev .fork && bash scripts/build_models_facts.sh .fork`（要装 jsonschema）。
 
 ## 加一条
 

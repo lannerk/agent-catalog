@@ -1,2 +1,4 @@
 # sync_mcp.py keeps the official schemas it reads here between runs.
 .cache/
+# The fork checked out by models-facts.yml.
+.fork/
