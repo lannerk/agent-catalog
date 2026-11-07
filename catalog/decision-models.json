@@ -1,0 +1,614 @@
+{
+ "schema": 1,
+ "version": "2026-11-08",
+ "runtimes": {
+  "llama.cpp": {
+   "version": "b12182",
+   "license": {
+    "id": "MIT",
+    "url": "https://github.com/ggml-org/llama.cpp/blob/master/LICENSE",
+    "class": "open"
+   },
+   "source": "https://github.com/ggml-org/llama.cpp/releases/tag/b12182",
+   "platforms": {
+    "linux-x86_64": {
+     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12182/llama-b12182-bin-ubuntu-x64.tar.gz",
+     "size": 23058802,
+     "sha256": "c1dbfdb9cbef7ee50b6ab08142d6424184d68b242906837770439ed118c57d99",
+     "binary": "llama-b12182/llama-server"
+    },
+    "linux-aarch64": {
+     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12182/llama-b12182-bin-ubuntu-arm64.tar.gz",
+     "size": 18731999,
+     "sha256": "57a4c7f59d2e8c790872141f0f9299cd5cc53b20e3ef3fcf2a7f3344eb8f1e72",
+     "binary": "llama-b12182/llama-server"
+    },
+    "macos-aarch64": {
+     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12182/llama-b12182-bin-macos-arm64.tar.gz",
+     "size": 16698597,
+     "sha256": "71cfee075e0c54852e225dafdc8dc79c32b26e8d45f052369b7d4f78d2ccf1a6",
+     "binary": "llama-b12182/llama-server"
+    },
+    "macos-x86_64": {
+     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12182/llama-b12182-bin-macos-x64.tar.gz",
+     "size": 12437210,
+     "sha256": "8447e61fb17a6b878c958750b181e75fa3295a07b3e5922529e8c259d8e175ac",
+     "binary": "llama-b12182/llama-server"
+    },
+    "windows-x86_64": {
+     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12182/llama-b12182-bin-win-cpu-x64.zip",
+     "size": 24749504,
+     "sha256": "e068c483e2ea97bf09121ec0bbe085bd43470bb67d9062c7c66162164aea5834",
+     "binary": "llama-server.exe"
+    },
+    "windows-aarch64": {
+     "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12182/llama-b12182-bin-win-cpu-arm64.zip",
+     "size": 13226153,
+     "sha256": "aa9543c2af0f2e78f3bda9149a634f3cd615d1f184393d5ab39d706a2b0fa9d2",
+     "binary": "llama-server.exe"
+    }
+   }
+  }
+ },
+ "ollama": {
+  "min_version": "0.35.0",
+  "source": "https://ollama.com/blog/ollama-now-supports-jev-style-decision-models"
+ },
+ "models": [
+  {
+   "id": "julia-1",
+   "name": "Julia-1",
+   "maker": "Supersonic Labs",
+   "base": "mmBERT-small, 144M",
+   "decision_type": "laya",
+   "tier": "one_click",
+   "llama_cpp": {
+    "url": "https://huggingface.co/ggml-org/Julia-1-GGUF/resolve/1e6b48a6983d7467f8eedc2cb0d21267b5fc052d/Julia-1-Q8_0.gguf",
+    "file": "Julia-1-Q8_0.gguf",
+    "sha256": "1ea6a7e87156eeeda88cb7a36a61265b37ba7b993897b7289b99aea5b5e47069",
+    "size": 168166496,
+    "context": 8192
+   },
+   "memory_gb": 1,
+   "strength": "smallest and fastest; made for routing; tagged multilingual",
+   "weakness": "a small encoder: no score on a shared ruler yet",
+   "scores": [],
+   "license": {
+    "id": "Apache-2.0",
+    "url": "https://huggingface.co/SupersonicLabs/Julia-1",
+    "class": "open"
+   },
+   "languages": [
+    "multilingual"
+   ],
+   "chinese": "untested",
+   "vision": false,
+   "recommended": false,
+   "our_test": {
+    "samples": "frey.decision-samples/v1",
+    "right": 11,
+    "of": 16,
+    "mean_ms": 63,
+    "date": "2026-11-08",
+    "machine": "windows-x86_64, llama.cpp b12182, CPU (i5-13600KF), 10 s timeout"
+   },
+   "source": "https://huggingface.co/ggml-org/Julia-1-GGUF"
+  },
+  {
+   "id": "kev-0.8b",
+   "name": "Kev 0.8B",
+   "maker": "Jared Palmer",
+   "base": "Qwen3.5 0.8B Base",
+   "decision_type": "kev",
+   "tier": "one_click",
+   "llama_cpp": {
+    "url": "https://huggingface.co/ggml-org/Kev-0.8B-GGUF/resolve/9231cb757e3320120077e42e52371971968f008d/Kev-0.8B-Q8_0.gguf",
+    "file": "Kev-0.8B-Q8_0.gguf",
+    "sha256": "27278f34eb3273bceea4c053dc50dd61a5161da21a718c4aacdf8fd5830771d0",
+    "size": 812406304,
+    "context": 8192
+   },
+   "memory_gb": 3,
+   "strength": "calibrated (Brier reported); trained on 13 public datasets",
+   "weakness": "English only",
+   "scores": [
+    {
+     "ruler": "breadth-v1 test (14 held-out public datasets, 3,089 questions), accuracy",
+     "score": 0.586,
+     "by": "maker (model card)",
+     "source": "https://huggingface.co/jaredpalmer/kev-0.8b",
+     "date": "2026-11-07"
+    }
+   ],
+   "license": {
+    "id": "Apache-2.0",
+    "url": "https://huggingface.co/jaredpalmer/kev-0.8b",
+    "class": "open"
+   },
+   "languages": [
+    "en"
+   ],
+   "chinese": "untested",
+   "vision": false,
+   "recommended": false,
+   "our_test": {
+    "samples": "frey.decision-samples/v1",
+    "right": 11,
+    "of": 16,
+    "mean_ms": 1046,
+    "date": "2026-11-08",
+    "machine": "windows-x86_64, llama.cpp b12182, CPU (i5-13600KF), 10 s timeout"
+   },
+   "source": "https://huggingface.co/ggml-org/Kev-0.8B-GGUF"
+  },
+  {
+   "id": "kev-4b",
+   "name": "Kev 4B",
+   "maker": "Jared Palmer",
+   "base": "Qwen3.5 4B Base",
+   "decision_type": "kev",
+   "tier": "one_click",
+   "llama_cpp": {
+    "url": "https://huggingface.co/ggml-org/Kev-4B-GGUF/resolve/f4624b6bb7072f1bab726a622c1cad3f96030b9e/Kev-4B-Q4_K_M.gguf",
+    "file": "Kev-4B-Q4_K_M.gguf",
+    "sha256": "33ae6b18926502b2209a1bf7d3b61a350d65938441515c686bb87d226a19eff9",
+    "size": 3033489824,
+    "context": 8192
+   },
+   "memory_gb": 6,
+   "strength": "calibrated (Brier reported); trained on 13 public datasets",
+   "weakness": "English only",
+   "scores": [
+    {
+     "ruler": "breadth-v1 test (14 held-out public datasets, 3,089 questions), accuracy",
+     "score": 0.69,
+     "by": "maker (model card)",
+     "source": "https://huggingface.co/jaredpalmer/kev-4b",
+     "date": "2026-11-07"
+    }
+   ],
+   "license": {
+    "id": "Apache-2.0",
+    "url": "https://huggingface.co/jaredpalmer/kev-4b",
+    "class": "open"
+   },
+   "languages": [
+    "en"
+   ],
+   "chinese": "untested",
+   "vision": false,
+   "recommended": true,
+   "our_test": {
+    "samples": "frey.decision-samples/v1",
+    "right": 14,
+    "of": 16,
+    "mean_ms": 2681,
+    "date": "2026-11-08",
+    "machine": "windows-x86_64, llama.cpp b12182, CPU (i5-13600KF), 10 s timeout"
+   },
+   "source": "https://huggingface.co/ggml-org/Kev-4B-GGUF"
+  },
+  {
+   "id": "kev-9b",
+   "name": "Kev 9B",
+   "maker": "Jared Palmer",
+   "base": "Qwen3.5 9B Base",
+   "decision_type": "kev",
+   "tier": "one_click",
+   "llama_cpp": {
+    "url": "https://huggingface.co/ggml-org/Kev-9B-GGUF/resolve/6927aa248a75f163aa8fc46260f7cad718d1565b/Kev-9B-Q4_K_M.gguf",
+    "file": "Kev-9B-Q4_K_M.gguf",
+    "sha256": "86a6084984a6ef6818eb12c07cdc67ed3c47b00208d41a8816c64301bc6bcbda",
+    "size": 6358923744,
+    "context": 8192
+   },
+   "memory_gb": 10,
+   "strength": "calibrated (Brier reported); trained on 13 public datasets; developer-tooling questions 0.791",
+   "weakness": "English only",
+   "scores": [
+    {
+     "ruler": "breadth-v1 test (14 held-out public datasets, 3,089 questions), accuracy",
+     "score": 0.698,
+     "by": "maker (model card)",
+     "source": "https://huggingface.co/jaredpalmer/kev-9b",
+     "date": "2026-11-07"
+    }
+   ],
+   "license": {
+    "id": "Apache-2.0",
+    "url": "https://huggingface.co/jaredpalmer/kev-9b",
+    "class": "open"
+   },
+   "languages": [
+    "en"
+   ],
+   "chinese": "untested",
+   "vision": false,
+   "recommended": false,
+   "source": "https://huggingface.co/ggml-org/Kev-9B-GGUF"
+  },
+  {
+   "id": "lev",
+   "name": "lev",
+   "maker": "Interfaze",
+   "base": "Qwen3.5 4B",
+   "decision_type": "lev",
+   "tier": "one_click",
+   "llama_cpp": {
+    "url": "https://huggingface.co/ggml-org/lev-GGUF/resolve/2ef3b3c3ab3defcab1058ab34cac52c467fa9304/lev-Q4_K_M.gguf",
+    "file": "lev-Q4_K_M.gguf",
+    "sha256": "bff94af408cc9ea616dd2543abf77afacefeec27d32d635ebe0ed0eb7ccd7efe",
+    "size": 3032093632,
+    "context": 8192
+   },
+   "memory_gb": 6,
+   "strength": "4B; yes/no read from a rating scale",
+   "weakness": "English only; no score on a shared ruler",
+   "scores": [],
+   "license": {
+    "id": "Apache-2.0",
+    "url": "https://huggingface.co/interfaze-ai/lev",
+    "class": "open"
+   },
+   "languages": [
+    "en"
+   ],
+   "chinese": "untested",
+   "vision": false,
+   "recommended": false,
+   "our_test": {
+    "samples": "frey.decision-samples/v1",
+    "right": 13,
+    "of": 16,
+    "mean_ms": 3601,
+    "date": "2026-11-08",
+    "machine": "windows-x86_64, llama.cpp b12182, CPU (i5-13600KF), 10 s timeout"
+   },
+   "source": "https://huggingface.co/ggml-org/lev-GGUF"
+  },
+  {
+   "id": "h2o-lightning-4b",
+   "name": "H2O Lightning 4B",
+   "maker": "H2O.ai",
+   "base": "Qwen3.5 4B",
+   "decision_type": "h2o-lightning",
+   "tier": "one_click",
+   "llama_cpp": {
+    "url": "https://huggingface.co/h2oai/h2o-lightning-4b-gguf/resolve/61f8d8b7a8c2d84426d0d143ca187f65d235934b/h2o-lightning-4b-Q4_K_M.gguf",
+    "file": "h2o-lightning-4b-Q4_K_M.gguf",
+    "sha256": "5ec969c6edbad5f1750141742f635cc7f01576bf9432151f730f0a6c30042768",
+    "size": 2708808736,
+    "context": 8192
+   },
+   "memory_gb": 5,
+   "strength": "4B; up to 255 score levels (llama.cpp still asks 2 to 10 of Frey)",
+   "weakness": "no score on a shared ruler",
+   "scores": [],
+   "license": {
+    "id": "Apache-2.0",
+    "url": "https://huggingface.co/h2oai/h2o-lightning-4b",
+    "class": "open"
+   },
+   "languages": [],
+   "chinese": "untested",
+   "vision": false,
+   "recommended": true,
+   "our_test": {
+    "samples": "frey.decision-samples/v1",
+    "right": 15,
+    "of": 16,
+    "mean_ms": 2554,
+    "date": "2026-11-08",
+    "machine": "windows-x86_64, llama.cpp b12182, CPU (i5-13600KF), 10 s timeout"
+   },
+   "source": "https://huggingface.co/h2oai/h2o-lightning-4b-gguf"
+  },
+  {
+   "id": "clef-flash",
+   "name": "Clef Flash",
+   "maker": "Cloudflare",
+   "base": "Qwen3.5 9B",
+   "decision_type": "clef",
+   "tier": "one_click",
+   "llama_cpp": {
+    "url": "https://huggingface.co/ggml-org/Clef-Flash-GGUF/resolve/a5a18a6e13bb36573a5f11385a1e7b9a0c868e9e/Clef-Flash-Q4_K_M.gguf",
+    "file": "Clef-Flash-Q4_K_M.gguf",
+    "sha256": "eef2968c238a80d49d340430f22410ea3db9934ad1c6fdb233a503cbf9a9b54e",
+    "size": 6732781824,
+    "context": 8192
+   },
+   "memory_gb": 10,
+   "strength": "reads every question of a request in one prompt; can read images (with its projector, not fetched here)",
+   "weakness": "no score on a shared ruler",
+   "scores": [],
+   "license": {
+    "id": "Apache-2.0",
+    "url": "https://huggingface.co/Cloudflare/clef-flash",
+    "class": "open"
+   },
+   "languages": [
+    "en"
+   ],
+   "chinese": "untested",
+   "vision": true,
+   "recommended": false,
+   "source": "https://huggingface.co/ggml-org/Clef-Flash-GGUF",
+   "ollama": {
+    "tag": "clef-flash:9b"
+   }
+  },
+  {
+   "id": "clef",
+   "name": "Clef",
+   "maker": "Cloudflare",
+   "base": "Qwen3.8 27B",
+   "decision_type": "clef",
+   "tier": "one_click",
+   "llama_cpp": {
+    "url": "https://huggingface.co/ggml-org/Clef-GGUF/resolve/8a35804a33c5b61e490d04ce22db54e8eb579d7d/Clef-Q4_K_M.gguf",
+    "file": "Clef-Q4_K_M.gguf",
+    "sha256": "06a819954debafc9664ac6bf3898818185d21d7efe36d0f01009d9958bf6e1fd",
+    "size": 19540136096,
+    "context": 8192
+   },
+   "memory_gb": 25,
+   "strength": "reads every question of a request in one prompt; can read images (with its projector, not fetched here)",
+   "weakness": "large",
+   "scores": [],
+   "license": {
+    "id": "Apache-2.0",
+    "url": "https://huggingface.co/Cloudflare/clef",
+    "class": "open"
+   },
+   "languages": [
+    "en"
+   ],
+   "chinese": "untested",
+   "vision": true,
+   "recommended": false,
+   "source": "https://huggingface.co/ggml-org/Clef-GGUF",
+   "ollama": {
+    "tag": "clef:27b"
+   }
+  },
+  {
+   "id": "openjev",
+   "name": "OpenJev 27B",
+   "maker": "OpenJev",
+   "base": "Qwen3.8 27B",
+   "decision_type": "openjev",
+   "tier": "one_click",
+   "llama_cpp": {
+    "url": "https://huggingface.co/ggml-org/OpenJev-GGUF/resolve/d2c376d11b6c466ab7bdc9fa458ace41cdf3e776/OpenJev-Q4_K_M.gguf",
+    "file": "OpenJev-Q4_K_M.gguf",
+    "sha256": "43b8d9cb89851f27c9d6bed8f073f917327bec05471da462eea77cbf896aa891",
+    "size": 19403686048,
+    "context": 8192
+   },
+   "memory_gb": 25,
+   "strength": "declares Chinese (en, de, fr, hi, zh, ja); can read images",
+   "weakness": "27B",
+   "scores": [],
+   "license": {
+    "id": "CC-BY-NC-4.0",
+    "url": "https://huggingface.co/openjev/openjev",
+    "class": "non_commercial"
+   },
+   "languages": [
+    "en",
+    "de",
+    "fr",
+    "hi",
+    "zh",
+    "ja"
+   ],
+   "chinese": "declared",
+   "vision": true,
+   "recommended": false,
+   "source": "https://huggingface.co/ggml-org/OpenJev-GGUF"
+  },
+  {
+   "id": "nimble-9b",
+   "name": "Nimble 9B v3",
+   "maker": "Bespoke Labs",
+   "base": "Qwen3.5 9B",
+   "decision_type": "nimble",
+   "tier": "one_click",
+   "llama_cpp": {
+    "url": "https://huggingface.co/ggml-org/Bespoke-Nimble-9B-v3-GGUF/resolve/679d9dee38a9f8e2dea7c0db2d638bb75e90ecf5/Bespoke-Nimble-9B-v3-Q4_K_M.gguf",
+    "file": "Bespoke-Nimble-9B-v3-Q4_K_M.gguf",
+    "sha256": "613a9b8c77ae1648b234d7202464d2e8e8da632910e9c59fbb22c13e027ca999",
+    "size": 6324185632,
+    "context": 8192
+   },
+   "ollama": {
+    "tag": "nimble:9b"
+   },
+   "memory_gb": 10,
+   "strength": "closest open model to Jev on Bespoke Labs' 13 datasets; up to 64 questions in one request",
+   "weakness": "licence differs by source (see note)",
+   "scores": [
+    {
+     "ruler": "Bespoke Labs' 13 public datasets with human labels (3,880 decisions), mean accuracy; Jev 1.13 76.0% on the same",
+     "score": 0.757,
+     "by": "Ollama model page",
+     "source": "https://ollama.com/library/nimble",
+     "date": "2026-11-07"
+    }
+   ],
+   "license": {
+    "id": "CC-BY-NC-4.0",
+    "url": "https://huggingface.co/bespokelabs/Bespoke-Nimble-9B-v3",
+    "class": "non_commercial",
+    "note": "Hugging Face (v3, the file here): CC BY-NC 4.0; the Ollama page says Apache 2.0 — the stricter one is shown"
+   },
+   "languages": [],
+   "chinese": "untested",
+   "vision": false,
+   "recommended": false,
+   "source": "https://huggingface.co/ggml-org/Bespoke-Nimble-9B-v3-GGUF"
+  },
+  {
+   "id": "liquid-d1-3b",
+   "name": "Liquid d1-3B",
+   "maker": "Liquid AI",
+   "base": "LFM2.5, 3B",
+   "decision_type": "lfm2-d1",
+   "tier": "one_click",
+   "llama_cpp": {
+    "url": "https://huggingface.co/LiquidAI/d1-3B-GGUF/resolve/bb1e436ea78eb96a3f1acb6da865f70c2fbeb563/d1-3B-Q4_K_M.gguf",
+    "file": "d1-3B-Q4_K_M.gguf",
+    "sha256": "16aff27ea2eefdc32b9897f43854a5d3170c1dc8dccb9c756905af30a4e22402",
+    "size": 1674456672,
+    "context": 8192
+   },
+   "memory_gb": 4,
+   "strength": "small and fast; 16 languages declared, Chinese among them; 32K context",
+   "weakness": "conditional licence",
+   "scores": [
+    {
+     "ruler": "Decision Index 0.3.1",
+     "score": 40.08,
+     "by": "third party (survey)",
+     "source": "https://redreamality.com/blog/open-decision-models-2026-survey-benchmarks/",
+     "date": "2026-11-07"
+    }
+   ],
+   "license": {
+    "id": "LFM-1.0",
+    "url": "https://huggingface.co/LiquidAI/d1-3B-GGUF/blob/main/LICENSE",
+    "class": "conditional",
+    "note": "companies with USD 10 million or more in yearly revenue need another licence"
+   },
+   "languages": [
+    "ar",
+    "zh",
+    "en",
+    "fr",
+    "de",
+    "hi",
+    "id",
+    "it",
+    "ja",
+    "ko",
+    "pl",
+    "pt",
+    "ru",
+    "es",
+    "th",
+    "vi"
+   ],
+   "chinese": "declared",
+   "vision": false,
+   "recommended": false,
+   "source": "https://huggingface.co/LiquidAI/d1-3B-GGUF"
+  },
+  {
+   "id": "tev1-0.8b",
+   "name": "Tev1 0.8B (experimental)",
+   "maker": "Together AI",
+   "base": "Qwen3.5 0.8B",
+   "decision_type": "ollama",
+   "tier": "one_click",
+   "ollama": {
+    "tag": "tev1:0.8b"
+   },
+   "memory_gb": 3,
+   "strength": "on Ollama only",
+   "weakness": "experimental; the weights' licence is not stated",
+   "scores": [
+    {
+     "ruler": "Bespoke Labs' 13 public datasets with human labels (3,880 decisions), mean accuracy; Jev 1.13 76.0% on the same",
+     "score": 0.635,
+     "by": "Ollama model page",
+     "source": "https://ollama.com/library/tev1",
+     "date": "2026-11-07"
+    }
+   ],
+   "license": {
+    "id": "unstated",
+    "url": "https://ollama.com/library/tev1",
+    "class": "conditional",
+    "note": "the page states MIT for the dataset builders and training scripts, nothing for the weights"
+   },
+   "languages": [
+    "en"
+   ],
+   "chinese": "untested",
+   "vision": false,
+   "recommended": false,
+   "source": "https://ollama.com/library/tev1"
+  },
+  {
+   "id": "tev1-4b",
+   "name": "Tev1 4B (experimental)",
+   "maker": "Together AI",
+   "base": "Qwen3.5 4B",
+   "decision_type": "ollama",
+   "tier": "one_click",
+   "ollama": {
+    "tag": "tev1:4b"
+   },
+   "memory_gb": 7,
+   "strength": "on Ollama only",
+   "weakness": "experimental; the weights' licence is not stated",
+   "scores": [
+    {
+     "ruler": "Bespoke Labs' 13 public datasets with human labels (3,880 decisions), mean accuracy; Jev 1.13 76.0% on the same",
+     "score": 0.733,
+     "by": "Ollama model page",
+     "source": "https://ollama.com/library/tev1",
+     "date": "2026-11-07"
+    }
+   ],
+   "license": {
+    "id": "unstated",
+    "url": "https://ollama.com/library/tev1",
+    "class": "conditional",
+    "note": "the page states MIT for the dataset builders and training scripts, nothing for the weights"
+   },
+   "languages": [
+    "en"
+   ],
+   "chinese": "untested",
+   "vision": false,
+   "recommended": false,
+   "source": "https://ollama.com/library/tev1"
+  }
+ ],
+ "advanced": [
+  {
+   "id": "laya",
+   "name": "Laya (421M)",
+   "how": "llama-server -hf ggml-org/Laya-GGUF:Q8_0 --host 127.0.0.1",
+   "license": {
+    "id": "Apache-2.0",
+    "url": "https://huggingface.co/convaiinnovations/laya",
+    "class": "open"
+   },
+   "note": "close to chance zero-shot (Decision Index 0.4.1 9.21); a base to specialise, not to route with"
+  },
+  {
+   "id": "pplx-decider-flash",
+   "name": "pplx-decider flash v1.2",
+   "how": "Perplexity's own inference code (CUDA); its GGUF has no decision metadata llama.cpp b12182 reads",
+   "license": {
+    "id": "Apache-2.0",
+    "url": "https://huggingface.co/perplexity-ai/pplx-decider-flash-v1.2",
+    "class": "open"
+   },
+   "note": "Decision Index 54.81 (flash)"
+  },
+  {
+   "id": "any",
+   "name": "Any /v1/systemone server",
+   "how": "frey decision set <service> with decision.base_url = http://127.0.0.1:<port>/v1/systemone",
+   "license": {
+    "id": "—",
+    "url": "",
+    "class": "open"
+   },
+   "note": "vLLM, llama.cpp or Ollama you run yourself"
+  }
+ ]
+}
