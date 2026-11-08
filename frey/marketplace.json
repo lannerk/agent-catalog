@@ -1,7 +1,34 @@
 {
   "name": "frey",
-  "owner": { "name": "lannerk", "url": "https://github.com/lannerk" },
-  "interface": { "displayName": "Frey" },
+  "owner": {
+    "name": "lannerk",
+    "url": "https://github.com/lannerk"
+  },
+  "interface": {
+    "displayName": "Frey"
+  },
   "description": "Frey plugins (Agent Plugins 1.0 packages; the entries use what Claude Code and Codex marketplaces share, so either can read this file too).",
-  "plugins": []
+  "plugins": [
+    {
+      "name": "commit-commands",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "plugins/commit-commands",
+        "sha": "0412be76f50ab4f4f8abff3753efa9269fbbca5b"
+      },
+      "description": "Commands for git commit workflows: commit, push, and open a pull request (Anthropic's plugin, at a pinned commit; commands only, it runs no program of its own).",
+      "version": "1.0.1",
+      "category": "productivity",
+      "tags": [
+        "recommended"
+      ],
+      "license": "Apache-2.0",
+      "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/commit-commands",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      }
+    }
+  ]
 }
