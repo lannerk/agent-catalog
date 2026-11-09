@@ -1,11 +1,11 @@
 {
   "format": 1,
-  "generated_at": "2026-11-06T06:55:49Z",
+  "generated_at": "2026-11-06T19:32:23Z",
   "license": "MIT (Copyright (c) 2025 models.dev); configs/models-facts.LICENSE",
   "overrides_version": 2,
   "source": "models.dev",
   "upstream": "https://github.com/lannerk/models.dev",
-  "upstream_commit": "92afc14ca284ac23822c6b5994ce91a4b35069c7",
+  "upstream_commit": "73aca25090c53778b29a9270d5a17c23b027920a",
   "providers": {
     "anthropic": {
       "models_dev": "anthropic",
