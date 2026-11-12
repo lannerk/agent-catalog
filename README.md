@@ -34,7 +34,7 @@ Frey 与 PiEv 共用的目录仓：插件市场、精选 skills、MCP 服务器�
 
 - **skill**：在 Frey 里 `frey skills add <来源>` 装上、真用一次，再往 `skills/index.json` 加一条（`verified` 写日期、Frey 版本、提交号）。
 - **MCP 服务器**：在 Frey 里 `frey connectors add <注册表名>` 跑通（工具列得出来、调一个工具成功）后，往 `mcp/curated.json` 加一条，`connector` 照 Frey 写进 `~/.frey/connectors.toml` 的那一段抄（凭据不写）。
-- **插件**：插件包过 `strict` 校验、在 Frey 里 `frey plugins add` 装上真用一次后，往对应的 `marketplace.json` 加一条（`name`、`source`、`description`、`version`、`category`、`policy`；要置顶加 `tags: ["recommended"]`）。`frey/marketplace.json` 里的条目就是 Frey 的**精选**：装时不带「来源未验证」，`plugins.allow_third_party` 关着也能装（T-0132）。别人仓里的插件用 `git-subdir` 钉 `sha` 指过去，不拷进本仓。
+- **插件**：兼容的直接推荐，不要求先真用一次（需求方 2026-11-13，Frey AD162 ④）。兼容＝插件包过 `strict` 校验、在 Frey 里 `frey plugins add` 装得上、`frey plugins list` 里它的各部分没有「不支持」。之后往对应的 `marketplace.json` 加一条（`name`、`source`、`description`、`version`、`category`、`policy`；要置顶加 `tags: ["recommended"]`）。`frey/marketplace.json` 里的条目就是 Frey 的**精选**：装时不带「来源未验证」，`plugins.allow_third_party` 关着也能装（T-0132）。别人仓里的插件钉 `sha` 指过去（整个仓就是一个插件用 `github`，仓里的一个子目录用 `git-subdir`），不拷进本仓。
 
 改完本地跑一次 `python3 scripts/test_sync_mcp.py`（装了 jsonschema 才会核 schema）。
 

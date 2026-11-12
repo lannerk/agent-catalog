@@ -29,6 +29,26 @@
         "installation": "AVAILABLE",
         "authentication": "ON_USE"
       }
+    },
+    {
+      "name": "modern-web-guidance",
+      "source": {
+        "source": "github",
+        "repo": "GoogleChrome/modern-web-guidance",
+        "sha": "4dd968349e54ca45a05dd5c818fb035c9054b022"
+      },
+      "description": "Modern web platform guidance from Chrome, Firefox and Edge: a skill that searches and retrieves expert-reviewed guides for HTML, CSS and client-side JS (Google Chrome's plugin, at a pinned commit; its search runs `npx modern-web-guidance`, which needs Node.js 22+).",
+      "version": "1.0.0",
+      "category": "development",
+      "tags": [
+        "recommended"
+      ],
+      "license": "Apache-2.0",
+      "homepage": "https://developer.chrome.com/docs/modern-web-guidance",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      }
     }
   ]
 }
