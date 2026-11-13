@@ -15,6 +15,28 @@
         "url": "https://learn.microsoft.com/api/mcp"
       },
       "notes": "Microsoft Learn docs search, code samples, page fetch (3 tools, read-only, reach out); no sign-in. Checked: `frey connectors add com.microsoft/microsoft-learn-mcp`, then a turn of DeepSeek called microsoft_docs_search."
+    },
+    {
+      "name": "com.browser-use/browser-use",
+      "verified": {
+        "date": "2026-11-13",
+        "with": [
+          "frey 0.9.2 (2026-11-13 build) on Windows 11 with Chrome 157 and DeepSeek V4 Flash"
+        ],
+        "version": "1.0.3"
+      },
+      "connector": {
+        "transport": "stdio",
+        "command": "uvx",
+        "args": [
+          "browser-use@1.0.3",
+          "--cli-mcp"
+        ],
+        "env": {
+          "ANONYMIZED_TELEMETRY": "false"
+        }
+      },
+      "notes": "Drives a web browser: the model writes Python that runs in browser-use's session over the Chrome DevTools protocol (4 tools: browser_exec, browser_screenshot, browser_login, browser_feedback; about 680 tokens per request in Frey). Pinned at 1.0.3: it changes fast and asks to be pinned; the registry still lists 0.13.11, so write this connector entry rather than the registry's package. Two things to know: it drives the Chrome you are signed in to (when remote debugging is on there; otherwise a Chromium of its own on a temp profile), and it is not a sandbox: the code the model writes runs on this machine with your permissions. It sends anonymous usage statistics unless told not to: ANONYMIZED_TELEMETRY=false (set here) or `browser-use telemetry disable`. Needs uv (Python 3.11+). Checked on Windows: through this connector a DeepSeek turn opened a page, clicked its link and read the result in 7 to 10 requests; the same through its skill and command line took 14 to 16 requests, and Playwright MCP 0.0.85 offers 25 tools (about 4,900 tokens per request)."
     }
   ]
 }
